@@ -35,3 +35,36 @@ const playlist = [
     }
     isPlaying = !isPlaying;
   }
+
+  playBtn.addEventListener("click", playPause);
+  nextBtn.addEventListener("click", () => {
+    current = (current + 1) % playlist.length;
+    loadSong(current);
+    if (isPlaying) audio.play();
+  });
+  
+  prevBtn.addEventListener("click", () => {
+    current = (current - 1 + playlist.length) % playlist.length;
+    loadSong(current);
+    if (isPlaying) audio.play();
+  });
+  
+  shuffleBtn.addEventListener("click", () => {
+    current = Math.floor(Math.random() * playlist.length);
+    loadSong(current);
+    if (isPlaying) audio.play();
+  });
+  
+  volume.addEventListener("input", () => {
+    audio.volume = volume.value;
+  });
+  
+  audio.addEventListener("timeupdate", () => {
+    progress.value = (audio.currentTime / audio.duration) * 100 || 0;
+  });
+  
+  progress.addEventListener("input", () => {
+    audio.currentTime = (progress.value / 100) * audio.duration;
+  });
+  
+  loadSong(current);
