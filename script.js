@@ -17,3 +17,10 @@ const playlist = [
   let current = 0;
   let isPlaying = false;
   
+
+  function loadSong(index) {
+    const track = playlist[index];
+    audio.src = track.file;
+    title.textContent = track.title;
+    artist.textContent = track.artist;
+  }
