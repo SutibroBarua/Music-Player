@@ -13,3 +13,7 @@ const playlist = [
     { title: "Chasing The Wind", artist: "Lanie Gardner", file: "music/Chasing the wind.mp3" },
     { title: "Myself", artist: "Nav", file: "music/Nav Myself.mp3" },
   ];
+
+  let current = 0;
+  let isPlaying = false;
+  
