@@ -9,10 +9,12 @@ const title = document.getElementById("title");
 const artist = document.getElementById("artist");
 
 const playlist = [
-    { title: "New York", artist: "Ja Rule", file: "music/NewYork.mp3" },
-    { title: "Chasing The Wind", artist: "Lanie Gardner", file: "music/Chasing the wind.mp3" },
-    { title: "Myself", artist: "Nav", file: "music/Nav Myself.mp3" },
+    { title: "New York", artist: "Ja Rule", file: "music/NewYork.mp3", cover: "images/NewYork.jpg" },
+    { title: "Chasing The Wind", artist: "Lanie Gardner", file: "music/Chasing the wind.mp3", cover: "images/Chasing The Wind.jpg" },
+    { title: "Myself", artist: "Nav", file: "music/Nav Myself.mp3", cover: "images/Myself.jpeg" },
   ];
+  
+  
 
   let current = 0;
   let isPlaying = false;
@@ -23,6 +25,8 @@ const playlist = [
     audio.src = track.file;
     title.textContent = track.title;
     artist.textContent = track.artist;
+    document.getElementById("cover").src = track.cover;
+
   }
 
   function playPause() {
