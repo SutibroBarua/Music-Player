@@ -24,3 +24,14 @@ const playlist = [
     title.textContent = track.title;
     artist.textContent = track.artist;
   }
+
+  function playPause() {
+    if (isPlaying) {
+      audio.pause();
+      playBtn.textContent = "▶️";
+    } else {
+      audio.play();
+      playBtn.textContent = "⏸️";
+    }
+    isPlaying = !isPlaying;
+  }
